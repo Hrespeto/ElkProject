@@ -34,16 +34,18 @@ Machines within the network can only be accessed by .
 A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes/No              | 10.0.0.5 10.0.0.6    |
+| Web-1    | No                  | 10.0.0.5             |
+| Web-2    | No                  | 10.0.0.6             |
+| ElkServer| No                  | 10.1.0.4             |
 ### Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- _TODO: What is the main advantage of automating configuration with Ansible?_ It helps with the representation of Infrastructure as Code (IAC). Provisioning and management is involved. 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- ...Install docker python
+- ... Install memeory to max
+- ... Launch the docker for the Elk container
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 ### Target Machines & Beats
