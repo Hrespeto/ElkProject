@@ -22,9 +22,9 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 |   Name    |  Function | IP Address | Operation System |
 |:---------:|:---------:|:----------:|:----------------:|
 | Jump box  | Gateway   | 10.0.0.4   | Linux            |
-| Web-1     | Container | 10.0.0.5   | Linux            |
-| Web-2     | Container | 10.0.0.6   | Linux            |
-| ElkServer | VM        | 10.1.0.4   | Linux            |
+| Web-1     | Web server| 10.0.0.5   | Linux            |
+| Web-2     | Web server| 10.0.0.6   | Linux            |
+| ElkServer | Server    | 10.1.0.4   | Linux            |
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet. 
 Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
@@ -50,10 +50,10 @@ The following screenshot displays the result of running `docker ps` after succes
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- _TODO: List the IP addresses of the machines you are monitoring_ The IP address 10.0.0.5 and 10.0.0.6
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
-These Beats allow us to collect the following information from each machine:
+- _TODO: Specify which Beats you successfully installed_ The beats that were successfully installed were the Filebeat and the Mectric Beat
+These Beats allow us to collect the following information from each machine: 
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
