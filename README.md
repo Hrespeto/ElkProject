@@ -29,8 +29,8 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted 10.0.0.4
-Machines within the network can only be accessed by .
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_ The machinces that I allow acces to my Elk vm were Web-1 and Web-2. 10.0.0.5 and 10.0.0.6
+Machines within the network can only be accessed by SSH. 
+- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_ The machince that I allow access to my Elk vm is the jump box. The IP address is the current public 
 A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
@@ -54,7 +54,7 @@ This ELK server is configured to monitor the following machines:
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_ The beats that were successfully installed were the Filebeat and the Mectric Beat
 These Beats allow us to collect the following information from each machine: 
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._ Filebeat collects log data and log events and forwards them to Elasticsearch. Metric beats 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 SSH into the control node and follow the steps below:
