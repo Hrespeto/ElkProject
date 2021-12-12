@@ -27,10 +27,10 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | ElkServer | VM        | 10.1.0.4   | Linux            |
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet. 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- _TODO: Add whitelisted 10.0.0.4
+Machines within the network can only be accessed by .
+- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_ The machinces that I allow acces to my Elk vm were Web-1 and Web-2. 10.0.0.5 and 10.0.0.6
 A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
