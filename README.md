@@ -12,9 +12,9 @@ This document contains the following details:
 - How to Use the Ansible Build
 ### Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Load balancing ensures that the application will be highly avaiable, in addition to restricting access to the network.
+- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_ Load balancers defends against DDoS It shifts attacks from one server to another server. Jump Boxes allows admins to connect to a secure computer(SSH), and connect to other machinces (servers, workstations).
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metrics.
 - _TODO: What does Filebeat watch for?_ Filebeat monitors the log files or locations that toy specify. After it collects the data, it forwards them to Elasticsearch.
 - _TODO: What does Metricbeat record?_ Metricbeat helps monitors servers by collecting metrics from the ssystem and services running on the server. It also takes the info output them in Elasticsearch. 
 The configuration details of each machine may be found below.
@@ -24,7 +24,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Jump box  | Gateway   | 10.0.0.4   | Linux            |
 | Web-1     | Container | 10.0.0.5   | Linux            |
 | Web-2     | Container | 10.0.0.6   | Linux            |
-| ElkServer |           | 10.1.0.4   | Linux            |
+| ElkServer | VM        | 10.1.0.4   | Linux            |
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet. 
 Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
