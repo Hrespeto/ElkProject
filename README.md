@@ -19,24 +19,24 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - _TODO: What does Metricbeat record?_ Metricbeat helps monitors servers by collecting metrics from the ssystem and services running on the server. It also takes the info output them in Elasticsearch. 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
-|   Name    |  Function | IP Address | Operation System |
-|:---------:|:---------:|:----------:|:----------------:|
-| Jump box  | Gateway   | 10.0.0.4   | Linux            |
-| Web-1     | Web server| 10.0.0.5   | Linux            |
-| Web-2     | Web server| 10.0.0.6   | Linux            |
-| ElkServer | Server    | 10.1.0.4   | Linux            |
+|   Name    |  Function   | IP Address | Operation System |
+|:---------:|:-----------:|:----------:|:----------------:|
+| Jump box  | Gateway     | 10.0.0.4   | Linux            |
+| Web-1     | Web Machine | 10.0.0.5   | Linux            |
+| Web-2     | Web Machine | 10.0.0.6   | Linux            |
+| ElkServer | Server      | 10.1.0.4   | Linux            |
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet. 
 Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted 10.0.0.4
+- _TODO: Add whitelisted 107.221.85.110
 Machines within the network can only be accessed by SSH. 
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_ The machince that I allow access to my Elk vm is the jump box. The IP address is the current public 
+- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_ The machince that I allow access to my Elk vm is the jump box. The IP address is ElkServer-ip
 A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.5 10.0.0.6    |
-| Web-1    | Yes/No              | 10.0.0.5             |
-| Web-2    | Yes/No              | 10.0.0.6             |
+| Jump Box | Yes                 | 10.0.0.5 10.0.0.6    |
+| Web-1    | No                  | 10.0.0.5             |
+| Web-2    | No                  | 10.0.0.6             |
 | ElkServer| No                  | 10.1.0.4             |
 ### Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
