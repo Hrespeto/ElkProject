@@ -51,12 +51,10 @@ The playbook implements the following tasks:
 - A new Virtual Machine is created. The machine will consist of at least 4Gb of ram, a public IP, added to the new vNet region, and be able to be accessed with the same SSH keys for the WebVM's.
 - The new VM will now be configured with Ansible. The /etc/ansible/hosts file is edited by adding the elkserver IP followed by anisble_python_intrepreter=/usr/bin/python3.  
 - Playbook is now gets created. nano /etc/ansible/install-elk.yml allows for the playbook to be created. The playbook will install the apt docker.io, python3-pip, and pip docker. The following ports should be configured 5601, 9200, 5044. 
-- The Playbook is ready to be run. SSH into the ElkServer to sebp/elk:761 is running. Once all is done,  http://[your.ELK-VM.External.IP]:5601/app/kibana and the following page should appear. 
+- The Playbook is ready to be run. SSH into the ElkServer to confirm sebp/elk:761 is running. 
  
  The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-![ScreenShot](https://github.com/Hrespeto/ElkProject/blob/main/Ansible/Docker_ps_ouput.PNG)
-
- ![ScreenShot] (insert Kibana page)  
+![ScreenShot](https://github.com/Hrespeto/ElkProject/blob/main/Ansible/Docker_ps_ouput.PNG) 
  
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -70,9 +68,9 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the ansible.cfg file to /etc/ansible.
 - Update the /etc/ansible/hosts file and ansible.cfg file to include the IP addresses of the machines that will be used on playbook 
-- Run the playbook, and navigate to Kibana to check that the installation worked as expected.
-_TODO: Answer the following questions to fill in the blanks:_
+- Run the playbook, and navigate to Kibana to check that the installation worked as expected. 
+  ![ScreenShot] (insert Kibana page) 
 - _Which file is the playbook? Where do you copy it? The filebeat-playbook should be copied to /etc/ansible
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running? (kibana link)
+- The /etc/ansible/hosts is the file that would need to be updated to run on a specific machine. 
+- To verify that the ElkServer is running, naviagate to http://[your.ELK-VM.External.IP]:5601/app/kibana
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
