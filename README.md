@@ -3,7 +3,7 @@ The files in this repository were used to configure the network depicted below.
 ![Elk stack project diagram](./Red Team network.drawio)
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
   - [Playbook file](Ansible/Filebeat-playbook.yml.txt)
-  - 
+  
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
