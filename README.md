@@ -46,7 +46,6 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - The main advantage of automating configuration with Ansible is, it helps with the representation of Infrastructure as Code (IAC). Provisioning and management is involved. 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - First we create a New vNet. This machine will have a 10.1.0.0/16 ip address
 - We then create a peer network between our vNets. This will allow traffic to pass between the vNets. We configure this in the Azure portal, vNet, settings, then Peering.
 - A new Virtual Machine is created. The machine will consist of at least 4Gb of ram, a public IP, added to the new vNet region, and be able to be accessed with the same SSH keys for the WebVM's.
