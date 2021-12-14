@@ -33,6 +33,7 @@ Only the jump box machine can accept connections from the Internet. Access to th
 Machines within the network can only be accessed by SSH. 
 - The machince that I allow access to my Elk vm is the jump box. The IP address is ElkServer-ip
 A summary of the access policies in place can be found in the table below.
+
 | Name       | Publicly Accessible | Allowed IP Address |
 |------------|---------------------|--------------------|
 | Jump Box   | Yes                 | 10.0.0.5 10.0.0.6  |
