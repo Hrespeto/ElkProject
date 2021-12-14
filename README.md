@@ -47,14 +47,18 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - The main advantage of automating configuration with Ansible is, it helps with the representation of Infrastructure as Code (IAC). Provisioning and management is involved. 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ... First we create a New vNet. This machine will have a 10.1.0.0/16 ip address
-- ... We then create a peer network between our vNets. This will allow traffic to pass between the vNets. We configure this in the Azure portal, vNet, settings, then Peering.
-- ... A new Virtual Machine is created. The machine will consist of at least 4Gb of ram, a public IP, added to the new vNet region, and be able to be accessed with the same SSH keys for the WebVM's.
-- ...  
-
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+- First we create a New vNet. This machine will have a 10.1.0.0/16 ip address
+- We then create a peer network between our vNets. This will allow traffic to pass between the vNets. We configure this in the Azure portal, vNet, settings, then Peering.
+- A new Virtual Machine is created. The machine will consist of at least 4Gb of ram, a public IP, added to the new vNet region, and be able to be accessed with the same SSH keys for the WebVM's.
+- The new VM will now be configured with Ansible. The /etc/ansible/hosts file is edited by adding the elkserver IP followed by anisble_python_intrepreter=/usr/bin/python3.  
+- Playbook is now gets created. nano /etc/ansible/install-elk.yml allows for the playbook to be created. The playbook will install the apt docker.io, python3-pip, and pip docker. The following ports should be configured 5601, 9200, 5044. 
+- The Playbook is ready to be run. SSH into the ElkServer to sebp/elk:761 is running. Once all is done,  http://[your.ELK-VM.External.IP]:5601/app/kibana and the following page should appear. 
+ 
+ The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 ![ScreenShot](https://github.com/Hrespeto/ElkProject/blob/main/Ansible/Docker_ps_ouput.PNG)
 
+ ![ScreenShot] (insert Kibana page)  
+ 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - The IP address of the machines I am monitoring are 10.0.0.5 and 10.0.0.6
