@@ -19,7 +19,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - Filebeat monitors the log files or locations that toy specify. After it collects the data, it forwards them to Elasticsearch.
 - Metricbeat helps monitors servers by collecting metrics from the ssystem and services running on the server. It also takes the info output them in Elasticsearch. 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+
 |   Name    |  Function   | IP Address | Operation System |
 |:---------:|:-----------:|:----------:|:----------------:|
 | Jump box  | Gateway     | 10.0.0.4   | Linux            |
@@ -31,7 +31,7 @@ The machines on the internal network are not exposed to the public Internet.
 Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted 107.221.85.110
 Machines within the network can only be accessed by SSH. 
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_ The machince that I allow access to my Elk vm is the jump box. The IP address is ElkServer-ip
+- The machince that I allow access to my Elk vm is the jump box. The IP address is ElkServer-ip
 A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
