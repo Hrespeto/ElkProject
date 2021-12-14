@@ -48,8 +48,8 @@ The playbook implements the following tasks:
 - ...Install docker python
 - ... Install memory to max
 - ... Launch the docker for the Elk container
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
+The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 ![ScreenShot](https://github.com/Hrespeto/ElkProject/blob/main/Ansible/Docker_ps_ouput.PNG)
 
 ### Target Machines & Beats
