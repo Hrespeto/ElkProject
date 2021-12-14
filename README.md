@@ -2,7 +2,8 @@
 The files in this repository were used to configure the network depicted below.
 ![Elk stack project diagram](./Red Team network.drawio)
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
-  - _TODO: Enter the playbook file._
+  - [Playbook file](Ansible/Filebeat-playbook.yml.txt)
+  
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
@@ -13,12 +14,12 @@ This document contains the following details:
 ### Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 Load balancing ensures that the application will be highly avaiable, in addition to restricting access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_ Load balancers defends against DDoS It shifts attacks from one server to another server. Jump Boxes allows admins to connect to a secure computer(SSH), and connect to other machinces (servers, workstations).
+- Load balancers defends against DDoS It shifts attacks from one server to another server. Jump Boxes allows admins to connect to a secure computer(SSH), and connect to other machinces (servers, workstations).
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metrics.
-- _TODO: What does Filebeat watch for?_ Filebeat monitors the log files or locations that toy specify. After it collects the data, it forwards them to Elasticsearch.
-- _TODO: What does Metricbeat record?_ Metricbeat helps monitors servers by collecting metrics from the ssystem and services running on the server. It also takes the info output them in Elasticsearch. 
+- Filebeat monitors the log files or locations that toy specify. After it collects the data, it forwards them to Elasticsearch.
+- Metricbeat helps monitors servers by collecting metrics from the ssystem and services running on the server. It also takes the info output them in Elasticsearch. 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+
 |   Name    |  Function   | IP Address | Operation System |
 |:---------:|:-----------:|:----------:|:----------------:|
 | Jump box  | Gateway     | 10.0.0.4   | Linux            |
@@ -30,24 +31,25 @@ The machines on the internal network are not exposed to the public Internet.
 Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted 107.221.85.110
 Machines within the network can only be accessed by SSH. 
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_ The machince that I allow access to my Elk vm is the jump box. The IP address is ElkServer-ip
+- The machince that I allow access to my Elk vm is the jump box. The IP address is ElkServer-ip
 A summary of the access policies in place can be found in the table below.
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes                 | 10.0.0.5 10.0.0.6    |
-| Web-1    | No                  | 10.0.0.5             |
-| Web-2    | No                  | 10.0.0.6             |
-| ElkServer| No                  | 10.1.0.4             |
+
+| Name       | Publicly Accessible | Allowed IP Address |
+|------------|---------------------|--------------------|
+| Jump Box   | Yes                 | 10.0.0.5 10.0.0.6  |
+| Web-1      | No                  | 10.0.0.4           |
+| Web-2      | No                  | 10.0.0.6           |
+| ElkServer  | No                  | 10.1.0.4           |
 ### Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_ It helps with the representation of Infrastructure as Code (IAC). Provisioning and management is involved. 
+- The main advantage of automating configuration with Ansible is, it helps with the representation of Infrastructure as Code (IAC). Provisioning and management is involved. 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ...Install docker python
 - ... Install memory to max
 - ... Launch the docker for the Elk container
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![ScreenShot](Ansible/Docker ps.png)
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_ The IP address 10.0.0.5 and 10.0.0.6
