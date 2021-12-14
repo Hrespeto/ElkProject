@@ -73,4 +73,5 @@ SSH into the control node and follow the steps below:
 - _Which file is the playbook? Where do you copy it? The filebeat-playbook should be copied to /etc/ansible
 - The /etc/ansible/hosts is the file that would need to be updated to run on a specific machine. 
 - To verify that the ElkServer is running, naviagate to http://[your.ELK-VM.External.IP]:5601/app/kibana
+
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
