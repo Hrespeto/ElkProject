@@ -69,7 +69,7 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 SSH into the control node and follow the steps below:
 - Copy the ansible.cfg file to /etc/ansible.
-- Update the install-elk.yml and filebeat-playbook file to include the IP addresses of the machines that will be used on playbook 
+- Update the /etc/ansible/hosts file and ansible.cfg file to include the IP addresses of the machines that will be used on playbook 
 - Run the playbook, and navigate to Kibana to check that the installation worked as expected.
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it? The filebeat-playbook should be copied to /etc/ansible
