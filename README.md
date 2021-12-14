@@ -39,7 +39,7 @@ A summary of the access policies in place can be found in the table below.
 | Name       | Publicly Accessible | Allowed IP Address |
 |------------|---------------------|--------------------|
 | Jump Box   | Yes                 | 10.0.0.5 10.0.0.6  |
-| Web-1      | No                  | 10.0.0.4           |
+| Web-1      | No                  | 10.0.0.5           |
 | Web-2      | No                  | 10.0.0.6           |
 | ElkServer  | No                  | 10.1.0.4           |
 ### Elk Configuration
@@ -47,9 +47,10 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - The main advantage of automating configuration with Ansible is, it helps with the representation of Infrastructure as Code (IAC). Provisioning and management is involved. 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...Install docker python
-- ... Install memory to max
-- ... Launch the docker for the Elk container
+- ... First we create a New vNet. This machine will have a 10.1.0.0/16 ip address
+- ... We then create a peer network between our vNets. This will allow traffic to pass between the vNets. We configure this in the Azure portal, vNet, settings, then Peering.
+- ... A new Virtual Machine is created. The machine will consist of at least 4Gb of ram, a public IP, added to the new vNet region, and be able to be accessed with the same SSH keys for the WebVM's.
+- ...  
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 ![ScreenShot](https://github.com/Hrespeto/ElkProject/blob/main/Ansible/Docker_ps_ouput.PNG)
