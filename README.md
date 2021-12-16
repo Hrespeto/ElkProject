@@ -39,21 +39,23 @@ A summary of the access policies in place can be found in the table below.
 | Name       | Publicly Accessible | Allowed IP Address |
 |------------|---------------------|--------------------|
 | Jump Box   | Yes                 | 10.0.0.5 10.0.0.6  |
-| Web-1      | No                  | 10.0.0.4           |
+| Web-1      | No                  | 10.0.0.5           |
 | Web-2      | No                  | 10.0.0.6           |
 | ElkServer  | No                  | 10.1.0.4           |
 ### Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - The main advantage of automating configuration with Ansible is, it helps with the representation of Infrastructure as Code (IAC). Provisioning and management is involved. 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...Install docker python
-- ... Install memory to max
-- ... Launch the docker for the Elk container
-
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-![ScreenShot](https://github.com/Hrespeto/ElkProject/blob/main/Ansible/Docker_ps_ouput.PNG)
-
+- First we create a New vNet. This machine will have a 10.1.0.0/16 ip address
+- We then create a peer network between our vNets. This will allow traffic to pass between the vNets. We configure this in the Azure portal, vNet, settings, then Peering.
+- A new Virtual Machine is created. The machine will consist of at least 4Gb of ram, a public IP, added to the new vNet region, and be able to be accessed with the same SSH keys for the WebVM's.
+- The new VM will now be configured with Ansible. The /etc/ansible/hosts file is edited by adding the elkserver IP followed by anisble_python_intrepreter=/usr/bin/python3.  
+- Playbook is now gets created. nano /etc/ansible/install-elk.yml allows for the playbook to be created. The playbook will install the apt docker.io, python3-pip, and pip docker. The following ports should be configured 5601, 9200, 5044. 
+- The Playbook is ready to be run. SSH into the ElkServer to confirm sebp/elk:761 is running. 
+ 
+ The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+![ScreenShot](https://github.com/Hrespeto/ElkProject/blob/main/Ansible/Docker_ps_ouput.PNG) 
+ 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - The IP address of the machines I am monitoring are 10.0.0.5 and 10.0.0.6
@@ -65,10 +67,11 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 SSH into the control node and follow the steps below:
 - Copy the ansible.cfg file to /etc/ansible.
-- Update the install-elk.yml and filebeat-playbook file to include the IP addresses of the machines that will be used on playbook 
-- Run the playbook, and navigate to Kibana to check that the installation worked as expected.
-_TODO: Answer the following questions to fill in the blanks:_
+- Update the /etc/ansible/hosts file and ansible.cfg file to include the IP addresses of the machines that will be used on playbook 
+- Run the playbook, and navigate to Kibana to check that the installation worked as expected. 
+  ![ScreenShot] (insert Kibana page) 
 - _Which file is the playbook? Where do you copy it? The filebeat-playbook should be copied to /etc/ansible
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running? (kibana link)
+- The /etc/ansible/hosts is the file that would need to be updated to run on a specific machine. 
+- To verify that the ElkServer is running, naviagate to http://[your.ELK-VM.External.IP]:5601/app/kibana
+
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
