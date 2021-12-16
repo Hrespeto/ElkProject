@@ -76,4 +76,6 @@ SSH into the control node and follow the steps below:
 - The /etc/ansible/hosts is the file that would need to be updated to run on a specific machine. 
 - To verify that the ElkServer is running, naviagate to http://40.117.226.3:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- To run the playbook command run ansible-playbook filebeat-playbook.yml
+- To edit the playbook nano filebeat-playbook.yml 
+ 
