@@ -31,8 +31,7 @@ The configuration details of each machine may be found below.
 ### Access Policies
 The machines on the internal network are not exposed to the public Internet. 
 Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted 107.221.85.110
-Machines within the network can only be accessed by SSH. 
+- This ip 107.221.85.110 has been addded to be whitelist to allow access. Machines within the network can only be accessed by SSH. 
 - The machince that I allow access to my Elk vm is the jump box. The IP address is ElkServer-ip
 A summary of the access policies in place can be found in the table below.
 
@@ -62,7 +61,7 @@ This ELK server is configured to monitor the following machines:
 We have installed the following Beats on these machines:
 - The beats that were successfully installed were the Filebeat and the Mectric Beat
 These Beats allow us to collect the following information from each machine: 
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._ Filebeat collects log data and log events and forwards them to Elasticsearch. Metric beats 
+- Filebeat collects log data and log events and forwards them to Elasticsearch. Metric beats collects and reports various system-level mertics for various systems and platform. 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 SSH into the control node and follow the steps below:
